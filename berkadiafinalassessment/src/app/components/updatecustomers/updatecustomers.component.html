@@ -1,0 +1,18 @@
+<form (ngSubmit)="getDetailsFromForm(patientform.value)" #patientform="ngForm" name="form"  class = "box">
+    
+    <h1>Enter details</h1>
+    
+    <input type="text" class="form-control" id="confirmed" name="lastname" placeholder="Enter updated customer lastname"  ngModel>
+    <input type="text" class="form-control" id="deaths" name="address" placeholder="Enter updated address"  ngModel>
+    <input type="text" class="form-control" id="recovered" name="city" placeholder="Enter  updated city"  ngModel>
+    <input type="text" class="form-control" id="confirmed" name="state" placeholder="Enter updated state"  ngModel>
+
+    <button class="button button1" type = "submit">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button button1" (click)="goBack()">Cancel</button>
+
+
+        
+</form>
+
+
+<h3>{{msgupdated}}</h3>

@@ -1,0 +1,51 @@
+<head>
+    <script src = "./tablescroll.ts">                                   //Table scroll style js file
+    </script>
+</head>
+<body>
+
+    
+    <form>
+        <input type="text" class="textbox" placeholder="Search" [(ngModel)]="firstnamestandalone" [ngModelOptions]="{standalone: true}"> <!-- Filter -->
+        <input title="Search" value="" type="submit" class="button" (click)="action()">  <!-- Sending firstname as ngmodel standalone value -->
+      </form>
+
+    <section>
+    <h1>Customer Details</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Click to delete</th>
+
+            
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+        <tr *ngFor="let val of customerdata">
+
+           <td><a [routerLink] = "['/updatepatientdetails']">{{val.firstname}}</a></td>
+           <td>{{val.lastname}}</td>
+           <td>{{val.address}}</td>
+           <td>{{val.city}}</td>
+           <td>{{val.state}}</td>
+           
+           <td><button (click)="sendFirstNameToDelete(i.firstname)" class="button button1">Delete</button></td><!-- I included delete for every row -->
+
+        </tr>
+        </tbody>
+    </table>
+  </div>
+  <h1>{{msgdelete}}</h1>
+</section>
+</body>
