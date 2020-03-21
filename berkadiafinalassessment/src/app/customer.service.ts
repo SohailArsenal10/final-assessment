@@ -27,13 +27,13 @@ export class CustomerService {
 postPatientDetails(patientdata):Observable<any>
 {
   const url = "http://localhost:3000/customer/insertcustomerdetails"; 
-  return this.http.get(url,patientdata);
+  return this.http.post(url,patientdata);
 }
 
 putPatientDetails(patientdata, firstname):Observable<any>
 {
   const url = "http://localhost:3000/customer/updatecustomerdetails" + firstname; 
-  return this.http.get(url,patientdata);
+  return this.http.put(url,patientdata);
 }
 
 deletePatientDetails(patientdata):Observable<any>
