@@ -7,7 +7,7 @@ getCustomerDetails()
 {
     return new Promise((resolve,reject) => {
       conn.query(`select * from customerdb`,(error,data) => {
-          if(error)
+          if(!error)
           resolve(data);
 
           else
@@ -21,7 +21,7 @@ getCustomerDetailsByFirstName(firstname)
 {
     return new Promise((resolve,reject) => {
       conn.query(`select * from customerdb where firstname = ${firstname}`,(error,data) => {
-          if(error)
+          if(!error)
           resolve(data);
 
           else
@@ -37,7 +37,7 @@ postCustomerDetails(details)
     
     return new Promise((resolve,reject) => {
         conn.query(`insert into customerdb values('${details.firstname}','${details.lastname}','${details.address}','${details.city}','${details.state}')`,(error,data) => {
-            if(error)
+            if(!error)
             resolve(data);
   
             else
@@ -52,7 +52,7 @@ putCustomerDetails(details,firstname)
     //console.log(details);
     return new Promise((resolve,reject) => {
         conn.query(`update customerdb set city = '${details.city}', state = '${details.state}', address = '${details.address}', lastname = '${details.lastname}' where firstname = '${firstname}'`,(error,data) => {
-            if(error)
+            if(!error)
             resolve(data);
   
             else
@@ -67,7 +67,7 @@ deleteCustomerDetails(details)
     console.log(details);                                                                             //Data sent as params from route
     return new Promise((resolve,reject) => {
         conn.query(`delete from customerdb where firstname = '${details}'`,(error,data) => {
-            if(error)
+            if(!error)
             resolve(data);
   
             else
