@@ -1,5 +1,5 @@
 var express = require('express')                                                       //Requiring modules
-var app = require(express())
+var app = express()
 var cors = require('cors')
  
 app.use(app.json())                                                                    //Using modules
